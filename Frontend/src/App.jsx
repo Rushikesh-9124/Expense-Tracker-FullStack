@@ -11,11 +11,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import UserProvider from "./context/userContext";
 
 const App = () => {
   return (
-    <UserProvider>
       <div className="">
       <ToastContainer />
         <Router>
@@ -29,7 +27,6 @@ const App = () => {
           </Routes>
         </Router>
       </div>
-    </UserProvider>
   );
 };
 
