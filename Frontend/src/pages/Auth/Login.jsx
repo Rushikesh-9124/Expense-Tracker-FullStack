@@ -14,7 +14,7 @@ const Login = () => {
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  const {updateUser} = useContext(UserContext)
+  const {updateUserData} = useContext(UserContext)
 
   const navigate = useNavigate()
   const handleLogin = async(e) => {
@@ -46,7 +46,7 @@ const Login = () => {
       if(res.data.success && res.data.accessToken){
         localStorage.setItem("token", res.data.accessToken)
         navigate('/dashboard')
-        updateUser(res.data.data)
+        updateUserData(res.data.data)
       }
     } catch (error) {
       if(error.response && error.response.data && error.response.data.message){
